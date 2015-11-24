@@ -215,6 +215,12 @@ line-height: 26px;
 .carousel-inner img{
 	width:100%;
 }
+
+.carousel-inner .item
+	height: 570px !important;
+	overflow: hidden;
+}
+
 .carousel-caption{
 	top:20%;
 }
@@ -2455,3 +2461,4 @@ padding-top: 20px;
 	width: auto;
 	z-index: 100000; /* Above WP toolbar. */
 }
+
