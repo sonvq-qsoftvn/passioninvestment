@@ -216,8 +216,8 @@ line-height: 26px;
 	width:100%;
 }
 
-.carousel-inner .item
-	height: 570px !important;
+.carousel-inner .item {
+    max-height: 570px !important;
 	overflow: hidden;
 }
 
@@ -319,8 +319,8 @@ line-height: 26px;
 /** Service Section  ***************************************************************************************************************
 ********************************************************************************************************************************/
 .enigma_service {
-	padding-top:90px;
-	padding-bottom:90px;
+	padding-top:70px;
+	padding-bottom:70px;
 	
 }
 .enigma_service_area{
@@ -913,8 +913,11 @@ transition: all 0.3s ease 0s;
 
 /** wrapper for front page **/
 .enigma_blog_area{
-	padding-top: 90px;
-	padding-bottom: 90px;
+    background: #ecf0f1;
+    padding-top: 90px;
+    padding-bottom: 90px;
+    border-top: 1px solid #DEE1E2;
+    border-bottom: 1px solid #DEE1E2;
 }
 .enigma_blog_wrapper{
 	margin-bottom: 90px;
@@ -2462,3 +2465,11 @@ padding-top: 20px;
 	z-index: 100000; /* Above WP toolbar. */
 }
 
+span.footer-title-underline {
+    border-bottom: 3px solid #fff;
+    padding-bottom: 6px;
+}
+.gridSingleItem {
+    height: 130px;
+    text-align: justify;
+}

@@ -477,6 +477,34 @@ $wp_customize->add_section(
 		'capability'=>'edit_theme_options',
 		)
 	);
+    $wp_customize->add_setting(
+	'enigma_options[service_1_link]',
+		array(
+		'default'=>esc_attr($wl_theme_options['service_1_link']),
+		'type'=>'option',
+		'sanitize_callback'=>'enigma_sanitize_text',
+		'capability'=>'edit_theme_options',
+		)
+	);
+    $wp_customize->add_setting(
+	'enigma_options[service_2_link]',
+		array(
+		'default'=>esc_attr($wl_theme_options['service_2_link']),
+		'type'=>'option',
+		'sanitize_callback'=>'enigma_sanitize_text',
+		'capability'=>'edit_theme_options',
+		)
+	);
+    $wp_customize->add_setting(
+	'enigma_options[service_3_link]',
+		array(
+		'default'=>esc_attr($wl_theme_options['service_3_link']),
+		'type'=>'option',
+		'sanitize_callback'=>'enigma_sanitize_text',
+		'capability'=>'edit_theme_options',
+		)
+	);
+    
 	$wp_customize->add_control(
     new enigma_Customize_Misc_Control(
         $wp_customize,
@@ -492,6 +520,13 @@ $wp_customize->add_section(
 		'type'=>'text',
 		'section'    => 'service_section',
 		'settings'   => 'enigma_options[service_1_title]'
+	) );
+    
+    $wp_customize->add_control( 'service_one_link', array(
+		'label'        => __( 'Service One Link', 'weblizar' ),
+		'type'=>'text',
+		'section'    => 'service_section',
+		'settings'   => 'enigma_options[service_1_link]'
 	) );
 	
 		$wp_customize->add_control('enigma_options[service_1_icons]',
@@ -525,6 +560,12 @@ $wp_customize->add_section(
 		'section'    => 'service_section',
 		'settings'   => 'enigma_options[service_2_title]'
 	) );
+    $wp_customize->add_control( 'service_two_link', array(
+		'label'        => __( 'Service Two Link', 'weblizar' ),
+		'type'=>'text',
+		'section'    => 'service_section',
+		'settings'   => 'enigma_options[service_2_link]'
+	) );
 		$wp_customize->add_control( 'enigma_options[service_2_icons]',
         array(
 			'label'        => __( 'Service Icon Two', 'weblizar' ),
@@ -552,6 +593,12 @@ $wp_customize->add_section(
 		'type'=>'text',
 		'section'    => 'service_section',
 		'settings'   => 'enigma_options[service_3_title]'
+	) );
+    $wp_customize->add_control( 'service_three_link', array(
+		'label'        => __( 'Service Three Link', 'weblizar' ),
+		'type'=>'text',
+		'section'    => 'service_section',
+		'settings'   => 'enigma_options[service_3_link]'
 	) );
 	$wp_customize->add_control('enigma_options[service_3_icons]',
         array(

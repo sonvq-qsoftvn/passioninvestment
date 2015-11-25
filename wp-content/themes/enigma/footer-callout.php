@@ -1,17 +1,31 @@
-<?php $wl_theme_options = weblizar_get_options(); ?>
 <div class="enigma_callout_area">
 	<div class="container">
 		<div class="row">
-		<?php if($wl_theme_options['fc_title'] !='') { ?>
-			<div class="col-md-9">
-			<p><i class="fa fa-thumbs-up"></i><?php echo esc_attr($wl_theme_options['fc_title']);?></p>
-			</div>
-			<?php } ?>
-			<?php if($wl_theme_options['fc_btn_txt'] !='') { ?>
-			<div class="col-md-3">
-			<a href="<?php echo esc_url($wl_theme_options['fc_btn_link']); ?>" class="enigma_callout_btn"><?php echo esc_attr($wl_theme_options['fc_btn_txt']); ?></a>
-			</div>
-			<?php } ?>
+		<?php
+        $args = array('post_type' => 'testimonial', 'posts_per_page' => 9, 'orderby' => 'rand');
+        $testimonial_list = new WP_Query($args);
+        ?>
+        <?php if ($testimonial_list->have_posts()): ?>
+            <section class="project-list-home">
+                <div class="container">
+                    <div class="row">
+                        <div id="mycarou">
+                        <?php while ($testimonial_list->have_posts()): $testimonial_list->the_post(); ?>
+                            <div class="gridSingleItem"> 
+                                <div class="col-sm-12">
+                                    <p><i class="fa fa-thumbs-up"></i><?php echo '"' . get_the_content() . '"';?></p>
+                                </div>
+                                <div class="col-sm-3 pull-right">
+                                    <p><em><b>~ <?php the_title(); ?> ~</b></em></p>
+                                </div>                                
+                            </div>
+                        <?php endwhile; ?>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <?php endif; ?>
+        <?php wp_reset_postdata(); ?>
 		</div>
 		
 	</div>

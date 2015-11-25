@@ -23,6 +23,8 @@
                 /*Carofredsul Slides*/
                 wp_enqueue_script('jquery.carouFredSel', WL_TEMPLATE_DIR_URI .'/js/carouFredSel-6.2.1/jquery.carouFredSel-6.2.1.js');
                 wp_enqueue_script('carouFredSel-element', WL_TEMPLATE_DIR_URI .'/js/carouFredSel-6.2.1/caroufredsel-element.js');
+                wp_enqueue_script('jquery.carouFredSels', WL_TEMPLATE_DIR_URI .'/js/jquery.carouFredSel-6.2.1-packed.js');
+                wp_enqueue_script('sliderjs', WL_TEMPLATE_DIR_URI .'/js/slider.js', array('jquery', 'jquery.carouFredSels'));
                 /*PhotoBox JS*/
                 wp_enqueue_script('photobox-js', WL_TEMPLATE_DIR_URI .'/js/jquery.photobox.js');
                 wp_enqueue_style('photobox', WL_TEMPLATE_DIR_URI . '/css/photobox.css');
